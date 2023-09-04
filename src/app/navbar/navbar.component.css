@@ -1,0 +1,48 @@
+.title {
+  color: #ffa600;
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.logo {
+  margin-right: 15px;
+}
+
+
+.nav-link {
+  color: #ffa600;
+  font-weight: 600;
+}
+
+.navbar {
+  display: flex;
+}
+
+.dropdown {
+  list-style: none;
+}
+
+.admin-edit {
+  color: #ffffff;
+}
+
+.admin-navbar .title{
+  color: #ffffff;
+}
+
+.admin-navbar .manage{
+  color: #ffffff;
+}
+
+@media (max-width: 740px) {
+
+  .navbar-nav {
+    flex-basis: 50%;
+  }
+
+  .navbar-nav li {
+    width: 100%;
+    text-align: center;
+  }
+}
+

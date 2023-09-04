@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>{{title}}</h1>
+
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-5" *ngFor="let culture of cultures">
+      <div class="card h-100">
+        <div class="ratio ratio-4x3">
+          <img [src]="culture.photo"  class="card-img-top" alt="Recipe Photo " loading="lazy" routerLink="/culture/{{culture.id}}">
+        </div>
+        <div class="card-body d-flex flex-column justify-content-between">
+
+          <h5 class="card-title">{{ culture.name }}</h5>
+        <p class="card-text"><strong>Descripción:</strong> {{ culture.description }}</p>
+        <p><strong>Countries:</strong> {{culture.countries}}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

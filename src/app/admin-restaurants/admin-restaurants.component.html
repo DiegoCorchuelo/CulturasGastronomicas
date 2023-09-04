@@ -1,0 +1,56 @@
+<h2 class="d-flex justify-content-center">Manage Restaurants</h2>
+
+<div class=" mb-3 input-add">
+  <input id="restaurant-name" class="form-control mb-3" placeholder="Name" #restaurantName />
+  <input id="restaurant-city" class="form-control mb-3" placeholder="City" #restaurantCity />
+  <input id="restaurant-country" class="form-control mb-3" placeholder="Country" #restaurantCountry/>
+  <input id="restaurant-michelinStars" class="form-control mb-3" placeholder="Michelin Stars" #restaurantMichelinStars />
+  <input id="restaurant-michelinDate" class="form-control mb-3" placeholder="Michelin Date" #restaurantMichelinDate />
+
+  <!-- (click) passes input values to add() and then clears the inputs -->
+  <button type="button" class="btn btn-outline-dark btn-lg add-button"
+          (click)="add(restaurantName.value, restaurantCity.value, restaurantCountry.value, +restaurantMichelinStars.value, restaurantMichelinDate.value);
+          restaurantName.value=''; restaurantCity.value=''; restaurantCountry.value=''; restaurantMichelinStars.value=''; restaurantMichelinDate.value='';">
+    Add Restaurant
+  </button>
+</div>
+
+<div class="lists">
+
+  <ul class="restaurants">
+    <div *ngIf="restaurants.length === 0">
+      <p class="p-2 mb-4 bg-warning text-black">No hay Restaurantes Disponibles!</p>
+    </div>
+
+    <li *ngFor="let restaurant of restaurants">
+      <a class="d-flex align-items-center" routerLink="/restaurant/{{restaurant.id}}">
+        <span class="badge">{{restaurant.id}}</span> {{restaurant.name}}
+      </a>
+      <button type="button" class="delete" title="delete hero" (click)="delete(restaurant)">
+        <img src="https://img.icons8.com/?size=512&id=68064&format=png" width="20" height="20" alt="trash">
+      </button>
+    </li>
+  </ul>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let restaurant of restaurants; index as i">
+              <td>{{i + 1 }}</td>
+              <td>{{restaurant.name}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

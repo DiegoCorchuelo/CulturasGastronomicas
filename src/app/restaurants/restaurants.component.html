@@ -1,0 +1,16 @@
+<h1>Restaurants</h1>
+<div class="restaurants">
+  <div class="restaurant-card" *ngFor="let restaurant of restaurants" routerLink="/restaurant/{{restaurant.id}}">
+    <div class="restaurant-details">
+      <div class="restaurant-name">{{ restaurant.name }}</div>
+      <div class="restaurant-location">
+        <span class="label">City:</span> {{ restaurant.city }},
+        <span class="label">Country:</span> {{ restaurant.country }}
+      </div>
+      <div *ngIf="restaurant.michelinStars" class="restaurant-michelin">
+        <span class="label">Michelin Stars:</span> {{ restaurant.michelinStars }}
+        <span class="michelin-date">({{ restaurant.michelinDate }})</span>
+      </div>
+    </div>
+  </div>
+</div>

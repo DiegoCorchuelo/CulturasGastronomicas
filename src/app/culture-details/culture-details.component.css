@@ -1,0 +1,69 @@
+.card .ratio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-video {
+  width: 100%; /* Ajusta el ancho del video al 100% del contenedor */
+  height: auto; /* Permite que la altura se ajuste automáticamente proporcionalmente */
+  max-height: 200px; /* Ajusta esta altura máxima según tus preferencias */
+}
+
+h2 {
+  margin-bottom: 80px;
+}
+
+.list {
+  width: 25%;
+}
+
+.countries {
+  margin-bottom: 80px;
+  display: flex;
+  flex-wrap: wrap; /* Hace que los elementos se ajusten automáticamente a la siguiente fila si no caben */
+  gap: 10px;
+}
+
+.restaurant-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-details {
+  flex: 1;
+}
+
+.restaurant-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.restaurant-location {
+  font-size: 14px;
+  color: #555;
+}
+
+.restaurant-michelin {
+  font-size: 14px;
+  color: #007bff;
+  margin-top: 5px;
+}
+
+.michelin-date {
+  font-size: 12px;
+  color: #777;
+  margin-left: 5px;
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 5px;
+}

@@ -1,0 +1,61 @@
+<h2 class="d-flex justify-content-center">Manage Products</h2>
+
+<div class=" mb-3 input-add">
+  <input id="product-name" class="form-control mb-3" placeholder="Name" #productName />
+  <input id="product-description" class="form-control mb-3" placeholder="Description" #productDescription />
+  <input id="product-history" class="form-control mb-3" placeholder="History" #productHistory/>
+  <input id="product-category" class="form-control mb-3" placeholder="Category" #productCategory />
+  <input id="product-photo" type="file" accept="image/*" class="form-control mb-3" placeholder="Photo URL" (change)="handlePhotoChange($event)" />
+
+  <!-- Show the selected image preview -->
+  <div *ngIf="selectedPhoto" class="mb-3">
+    <img [src]="selectedPhoto" alt="Selected Photo" class="img-thumbnail">
+  </div>
+
+  <!-- (click) passes input values to add() and then clears the inputs -->
+  <button type="button" class="btn btn-outline-dark btn-lg add-button"
+          (click)="add(productName.value, productDescription.value, productHistory.value, productCategory.value, selectedPhoto);
+          productName.value=''; productDescription.value=''; productHistory.value=''; productCategory.value=''; selectedPhoto = null;">
+    Add Product
+  </button>
+</div>
+
+<div class="lists">
+
+  <ul class="products">
+    <div *ngIf="products.length === 0">
+      <p class="p-2 mb-4 bg-warning text-black">No hay Productos Disponibles!</p>
+    </div>
+
+    <li *ngFor="let product of products">
+      <a class="d-flex align-items-center" routerLink="/product/{{product.id}}">
+        <span class="badge">{{product.id}}</span> {{product.name}}
+      </a>
+      <button type="button" class="delete" title="delete hero" (click)="delete(product)">
+        <img src="https://img.icons8.com/?size=512&id=68064&format=png" width="20" height="20" alt="trash">
+      </button>
+    </li>
+  </ul>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products; index as i">
+              <td>{{i + 1 }}</td>
+              <td>{{product.name}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

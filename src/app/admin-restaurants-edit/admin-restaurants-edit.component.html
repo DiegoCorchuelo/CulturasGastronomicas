@@ -1,0 +1,32 @@
+<div class="container" *ngIf="restaurant">
+  <h2>{{restaurant.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{restaurant.id}}</div>
+  <div>
+    <span for="restaurant-name">Name: </span>
+    <input id="restaurant-name" class="form-control input-detail" pattern="[^0-9]+" [class]="nameInput.valid ? 'input-valid' : 'input-invalid'" #nameInput="ngModel" required [(ngModel)]="restaurant.name" placeholder="Restaurant name"/>
+  </div>
+
+  <div>
+    <span for="restaurant-city">City: </span>
+    <input id="restaurant-city" class="form-control input-detail" pattern="[^0-9]+" [class]="cityInput.valid ? 'input-valid' : 'input-invalid'" #cityInput="ngModel" required [(ngModel)]="restaurant.city" placeholder="Restaurant city"/>
+  </div>
+
+  <div>
+    <span for="restaurant-country">Country: </span>
+    <input id="restaurant-country" class="form-control input-detail" pattern="[^0-9]+" [class]="countryInput.valid ? 'input-valid' : 'input-invalid'" #countryInput="ngModel" required [(ngModel)]="restaurant.country" placeholder="Restaurant country"/>
+  </div>
+
+  <div>
+    <span for="restaurant-michelinStars">michelin Stars: </span>
+    <input id="restaurant-michelinStars" class="form-control input-detail" pattern="[0-9]" [class]="michelinStarsInput.valid ? 'input-valid' : 'input-invalid'" #michelinStarsInput="ngModel" required [(ngModel)]="restaurant.michelinStars" placeholder="Restaurant michelin stars"/>
+  </div>
+
+  <div>
+    <span for="restaurant-michelinDate">michelin Date: </span>
+    <input id="restaurant-michelinDate" class="form-control input-detail"  pattern="\b\d{4}\b" [class]="michelinDateInput.valid ? 'input-valid' : 'input-invalid'" #michelinDateInput="ngModel" required [(ngModel)]="restaurant.michelinDate" placeholder="Restaurant michelin date"/>
+  </div>
+  <div class="buttons">
+    <button type="button" class="btn btn-dark btn-lg button-back" (click)="goBack()">go back</button>
+    <button type="button" class="btn btn-dark btn-lg button-back" (click)="save()">save</button>
+  </div>
+</div>

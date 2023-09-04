@@ -1,0 +1,83 @@
+  <div *ngIf="isAdminMode; else isNotAdmin">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5 admin-navbar">
+      <a class="navbar-brand d-flex align-items-center mx-5 title" href="#">
+        <img src="{{ logo }}" width="50" height="50" class="d-inline-block align-top logo" alt="">
+        TasteAtlas
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <div class="nav-item dropdown text-center mt-2 position-relative"> <!--Relative - padre -->
+          <a class="nav-link dropdown-toggle manage" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Manage
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end position-absolute start-50 translate-middle-x"> <!-- Clases para centrar Position hijo -->
+            <li><a class="dropdown-item" (click)="activateAdminMode()" routerLink="/admin-products">Admin</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="desactivateAdminMode()" routerLink="/cultures">Viewer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <u class="navbar-nav ms-auto mt-2">
+          <li class="nav-item">
+            <a class="nav-link admin-edit mx-5" routerLink="/admin-products">Create Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link admin-edit mx-5" routerLink="admin-restaurants">Create Restaurants</a>
+          </li>
+        </u>
+      </div>
+    </nav>
+  </div>
+
+  <ng-template #isNotAdmin>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light mb-5">
+      <a class="navbar-brand d-flex align-items-center mx-5 title" href="#">
+        <img src="{{ logo }}" width="50" height="50" class="d-inline-block align-top logo" alt="">
+        TasteAtlas
+      </a>
+      <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon bg-secondary"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <div class="nav-item dropdown text-center mt-2 position-relative"> <!--Relative - padre -->
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Manage
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end position-absolute start-50 translate-middle-x"> <!-- Clases para centrar Position hijo -->
+            <li><a class="dropdown-item" (click)="activateAdminMode()" routerLink="/admin-products">Admin</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="desactivateAdminMode()" routerLink="/cultures">Viewer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ms-auto mt-2">
+          <li class="nav-item">
+            <a class="nav-link mx-5" routerLink="/cultures">Cultures</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-5" routerLink="/recipes">Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-5" routerLink="/products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-5" routerLink="/restaurants">Restaurants</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </ng-template>
+
+
+
+
+

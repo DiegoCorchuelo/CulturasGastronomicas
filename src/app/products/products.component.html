@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>{{title}}</h1>
+
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-5" *ngFor="let product of products">
+      <div class="card h-100">
+        <div class="ratio ratio-4x3">
+          <img *ngIf="product.photo" [src]="product.photo"  class="card-img-top" alt="Recipe Photo " loading="lazy" routerLink="/product/{{product.id}}">
+        </div>
+        <div class="card-body d-flex flex-column justify-content-between">
+
+          <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text"><strong>Descripción:</strong> {{ product.description }}</p>
+        <p class="card-text"><strong>Historia:</strong> {{ product.history }}</p>
+        <p class="card-text"><strong>Categoría:</strong> {{ product.category }}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
