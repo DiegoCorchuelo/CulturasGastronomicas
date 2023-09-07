@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //  habilitar características de vinculación de datos bidireccional (two-way binding) y manipulación de formularios.
 
 import { HttpClientModule } from '@angular/common/http';
 

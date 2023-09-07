@@ -20,6 +20,7 @@ constructor(private cultureService: CultureService) { }
 
   getCultures(): void {
     this.cultureService.getCultures()
+    // promesa suscribirse al observable para recibir los datos
       .subscribe(cultures => this.cultures = cultures);
   }
 }

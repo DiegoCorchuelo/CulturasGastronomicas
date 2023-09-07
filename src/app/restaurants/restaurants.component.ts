@@ -18,6 +18,7 @@ restaurants :Restaurant[] = [];
 
   getRestaurants(): void {
     this.restaurantService.getRestaurants()
+    // promesa suscribirse al observable para recibir los datos
       .subscribe(restaurants => this.restaurants = restaurants);
   }
 }

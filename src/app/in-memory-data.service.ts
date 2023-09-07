@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Culture } from './culture';
-import { Product } from './product';
+import { InMemoryDbService } from 'angular-in-memory-web-api'; // crear una base de datos simulada en memoria
 
 @Injectable({
   providedIn: 'root'
 })
 export class InMemoryDataService implements InMemoryDbService{
 
+  //rutas de la api
   createDb() {
     const cultures = [
       {

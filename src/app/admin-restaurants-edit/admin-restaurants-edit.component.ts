@@ -25,18 +25,24 @@ export class AdminRestaurantsEditComponent implements OnInit {
   }
 
   getRestaurant(): void {
+        // convertir cadena a entero 10 sistema decimal
+        // snapshot contiene una instantánea de la ruta actua
+        // paramMap contiene un map de param de la URL
+        // ! no será nulo (null) ni indefinido (undefined).
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.restaurantService.getRestaurant(id)
+    // promesa suscribirse al observable para recibir los datos
       .subscribe(restaurant => this.restaurant = restaurant);
   }
 
   goBack(): void {
-    this.location.back();
+    this.location.back(); // navegar hacia atras en el historial del navegador
   }
 
   save(): void {
     if (this.restaurant) {
       this.restaurantService.updateRestaurant(this.restaurant)
+      // promesa suscribirse al observable para actualizar los datos
         .subscribe(() => this.goBack());
     }
   }

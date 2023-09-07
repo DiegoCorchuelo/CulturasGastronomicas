@@ -3,27 +3,27 @@
   <div><span>id: </span>{{product.id}}</div>
   <div>
     <span for="product-name">Name: </span>
-    <input id="product-name" class="form-control input-detail" pattern="[^0-9]+" [class]="nameInput.valid ? 'input-valid' : 'input-invalid'" #nameInput="ngModel" required [(ngModel)]="product.name" placeholder="Product name"/>
+    <input id="product-name" class="form-control input-detail" pattern="[^0-9]+" #nameInput="ngModel" [class]="nameInput.valid ? 'input-valid' : 'input-invalid'" required [(ngModel)]="product.name" placeholder="Product name"/>
   </div>
 
   <div>
     <span for="product-description">Description: </span>
-    <input id="product-description" class="form-control input-detail" pattern="[^0-9]+" [class]="descriptionInput.valid ? 'input-valid' : 'input-invalid'" #descriptionInput="ngModel" required [(ngModel)]="product.description" placeholder="Product description"/>
+    <input id="product-description" class="form-control input-detail" pattern="[^0-9]+" #descriptionInput="ngModel"[class]="descriptionInput.valid ? 'input-valid' : 'input-invalid'" required [(ngModel)]="product.description" placeholder="Product description"/>
   </div>
 
   <div>
     <span for="product-history">History: </span>
-    <input id="product-hisroty" class="form-control input-detail" pattern="[^0-9]+" [class]="historyInput.valid ? 'input-valid' : 'input-invalid'" #historyInput="ngModel" required [(ngModel)]="product.history" placeholder="Product history"/>
+    <input id="product-hisroty" class="form-control input-detail" pattern="[^0-9]+" #historyInput="ngModel" [class]="historyInput.valid ? 'input-valid' : 'input-invalid'" required [(ngModel)]="product.history" placeholder="Product history"/>
   </div>
 
   <div>
     <span for="product-category">Category: </span>
-    <input id="product-category" class="form-control input-detail" pattern="[^0-9]+" [class]="categoryInput.valid ? 'input-valid' : 'input-invalid'" #categoryInput="ngModel" required [(ngModel)]="product.category" placeholder="Product category"/>
+    <input id="product-category" class="form-control input-detail" pattern="[^0-9]+"  #categoryInput="ngModel" [class]="categoryInput.valid ? 'input-valid' : 'input-invalid'" required [(ngModel)]="product.category" placeholder="Product category"/>
   </div>
 
   <div>
     <span for="product-photo">Photo: </span>
-    <input id="product-photo" class="form-control input-detail"  pattern="^(https?:\/\/)?[\w\-]+(\.[\w\-]+)+[/#?]?.*$" [class]="photoInput.valid ? 'input-valid' : 'input-invalid'" #photoInput="ngModel" required [(ngModel)]="product.photo" placeholder="Product photo"/>
+    <input id="product-photo" class="form-control input-detail"  pattern="^https?://[\w\-]+(\.[\w\-]+)+[\/#?]?.*$" #photoInput="ngModel" [class]="photoInput.valid ? 'input-valid' : 'input-invalid'"  required [(ngModel)]="product.photo" placeholder="Product photo"/>
   </div>
   <div class="buttons">
     <button type="button" class="btn btn-dark btn-lg button-back" (click)="goBack()">go back</button>

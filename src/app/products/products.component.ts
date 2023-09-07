@@ -19,6 +19,7 @@ export class ProductsComponent implements OnInit {
 
   getProducts(): void {
     this.productService.getProducts()
+    // promesa suscribirse al observable para recibir los datos
       .subscribe(products => this.products = products);
   }
 
